@@ -8,18 +8,18 @@ if they already exist.
 Run this script to re-define the DDL structure of 'bronze' Tables
 ============================================================
 /*
-IF 0BJECT_ID('bronze.crm_cust_info', 'U') IS NOT NULL
+IF OBJECT_ID('bronze.crm_cust_info', 'U') IS NOT NULL
  DROP TABLE bronze.crm_cust_info;
 
 GO
 
 CREATE TABLE bronze.crm_cust_info (
-cust_id int
-cust_key nvarchar(50)
-cust_firstname nvarchar(50)
-cust_lastname nvarchar(50)
-cust_marital_status nvarchar(50)
-cust_gender nvarchar(50)
+cust_id int,
+cust_key nvarchar(50),
+cust_firstname nvarchar(50),
+cust_lastname nvarchar(50),
+cust_marital_status nvarchar(50),
+cust_gender nvarchar(50),
 cust_create_date date );
 
 GO
@@ -27,11 +27,11 @@ IF OBJECT_ID('bronze.crm_prd_info', 'U') IS NOT NULL
 DROP TABLE bronze.crm_prd_info;
 
 CREATE TABLE bronze.crm_prd_info (
-prd_id int
-prd_key NVARCHAR(50)
-prd_name NVARCHAR(50)
-prd_cost int
-prd_line NVARCHAR(50)
+prd_id int,
+prd_key NVARCHAR(50),
+prd_name NVARCHAR(50),
+prd_cost int,
+prd_line NVARCHAR(50),
 prd_start_dt DATETIME,
 prd_end_dt DATETIME );
 
@@ -43,7 +43,7 @@ GO
 
 CREATE TABLE bronze.crm_sales_details (
 sales_ord_num NVARCHAR(50),
-sales_prd_key NARCHAR(50),
+sales_prd_key NVARCHAR(50),
 sales_cust_id INT,
 sales_order_dt INT,
 sales_ship_dt INT,
